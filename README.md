@@ -1,4 +1,4 @@
-# FULL_ADDER_SUBTRACTOR
+ FULL_ADDER_SUBTRACTOR
 
 Implementation-of-Full-Adder-and-Full-subtractor-circuit
 
@@ -37,19 +37,72 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+Full adder<br>
+![WhatsApp Image 2024-11-12 at 10 24 46_dccfa330](https://github.com/user-attachments/assets/cc1fffd1-4898-48ce-a1bc-d95d290ac0b4)
+Full sbtracter<br>
+![WhatsApp Image 2024-11-12 at 10 22 49_d0fce231](https://github.com/user-attachments/assets/42577de2-3190-4059-81ef-09e4d7943b08)
 
 **Procedure**
+1.	Type the program in Quartus software.
+
+2.	Compile and run the program.
+
+3.	Generate the RTL schematic and save the logic diagram.
+
+4.	Create nodes for inputs and outputs to generate the timing diagram.
+
+5.	For different input combinations generate the timing diagram.
 
 Write the detailed procedure here
 
 **Program:**
+```
+module exp4 a(df, bo, a, b, bin);
+ output df;
+ output bo;
+ input a;
+ input b; 
+ input bin;
+ wire w1,w2,w3;
+ assign w1=a^b;
+ assign w2=(~a&b);
+ assign w3=(~w1&bin);
+ assign df=w1^bin;
+ assign bo-w2/w3;
+ endmodule
+module exp4a (df, bo, a, b, bin);
+ output df;
+ output bo;
+ input a;
+ input b;
+ input bin;
+ wire w1,w2, w3;
+ assign w1=a^b;
+ assign w2=(~a&b); 
+ assign w3=(~w1&bin);
+ assign df=w1^bin;
+ assign bo=w2|w3;
+ endmodule
+```
 
 /* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+*/24900419
 
 **RTL Schematic**
 
+Full adder<br>
+![WhatsApp Image 2024-11-12 at 10 03 25_fe518936](https://github.com/user-attachments/assets/0c67dfbc-ce03-41dd-917e-e802f122aa69)
+
+Full sbtracter<br>
+
+![WhatsApp Image 2024-11-12 at 10 05 43_d1fe7f23](https://github.com/user-attachments/assets/c637d884-caf0-499c-89e3-a391eb05b433)
+
 **Output Timing Waveform**
+Full adder<br>
+![Screenshot (19)](https://github.com/user-attachments/assets/a299f5fd-90d9-4b80-82ff-91d5a507ed35)
+Full sbtracter<br>
+![Screenshot (24)](https://github.com/user-attachments/assets/ca015316-dcf1-4f01-a8ff-e51401190fc2)
+
 
 **Result:**
 
